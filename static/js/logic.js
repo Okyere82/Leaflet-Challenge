@@ -1,45 +1,45 @@
 // Visualizing-Data-with-Leaflet 
 
 // Earthquakes & Tectonic Plates GeoJSON URL Variables
-var earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
+let earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
 
-var platesURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json"
+let platesURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json"
 
 // Creating & initialising two Separate LayerGroups: earthquakes & tectonicPlates
-var earthquakes = new L.LayerGroup();
-var tectonicPlates = new L.LayerGroup();
+let earthquakes = new L.LayerGroup();
+let tectonicPlates = new L.LayerGroup();
 
 // Define Variables for Tile Layers
-var satelliteMap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+let satelliteMap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
     maxZoom: 18,
     id: "mapbox.satellite",
     accessToken: API_KEY
 });
 
-var topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+let topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
   });
 
-var street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   })
 
 // Define baseMaps Object to Hold Base Layers
-var baseMaps = {
+let baseMaps = {
     "Satellite": satelliteMap,
     "Street" : street,
     "Topographic" :  topo
 };
 
 // Create Overlay Object to Hold Overlay Layers
-var overlayMaps = {
+let overlayMaps = {
     "Earthquakes": earthquakes,
     "Fault Lines": tectonicPlates
 };
 
 // Create Map, Passing In satelliteMap & earthquakes as Default Layers to Display on Load
-var myMap = L.map("map", {
+let myMap = L.map("map", {
     center: [37.09, -95.71],
     zoom: 2,
     layers: [satelliteMap, earthquakes]
@@ -118,14 +118,14 @@ d3.json(earthquakesURL, function(earthquakeData) {
     });
 
     // Set Up Legend
-    var legend = L.control({ position: "bottomright" });
+    let legend = L.control({ position: "bottomright" });
     legend.onAdd = function() {
-        var div = L.DomUtil.create("div", "info legend"), 
+        let div = L.DomUtil.create("div", "info legend"), 
         magnitudeLevels = [0, 1, 2, 3, 4, 5];
 
         div.innerHTML += "<h3>Magnitude</h3>"
 
-        for (var i = 0; i < magnitudeLevels.length; i++) {
+        for (let i = 0; i < magnitudeLevels.length; i++) {
             div.innerHTML +=
                 '<i style="background: ' + chooseColor(magnitudeLevels[i] + 1) + '"></i> ' +
                 magnitudeLevels[i] + (magnitudeLevels[i + 1] ? '&ndash;' + magnitudeLevels[i + 1] + '<br>' : '+');
