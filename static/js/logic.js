@@ -9,7 +9,7 @@ let platesURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/
 let earthquakes = new L.LayerGroup();
 let tectonicPlates = new L.LayerGroup();
 
-// Define Variables for Tile Layers
+// Defining Variables for Tile Layers
 let satelliteMap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
     maxZoom: 18,
@@ -25,20 +25,20 @@ let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   })
 
-// Define baseMaps Object to Hold Base Layers
+// Definimg baseMaps Object to Hold Base Layers
 let baseMaps = {
     "Satellite": satelliteMap,
     "Street" : street,
     "Topographic" :  topo
 };
 
-// Create Overlay Object to Hold Overlay Layers
+// Creating Overlay Object to Hold Overlay Layers
 let overlayMaps = {
     "Earthquakes": earthquakes,
     "Fault Lines": tectonicPlates
 };
 
-// Create Map, Passing In satelliteMap & earthquakes as Default Layers to Display on Load
+// Creating Map, Passing In satelliteMap & earthquakes as Default Layers to Display on Load
 let myMap = L.map("map", {
     center: [37.09, -95.71],
     zoom: 2,
@@ -86,7 +86,7 @@ d3.json(earthquakesURL, function(earthquakeData) {
             return "#DAF7A6";
         }
     }
-    // Create a GeoJSON Layer Containing the Features Array on the earthquakeData Object
+    // Creating a GeoJSON Layer Containing the Features Array on the earthquakeData Object
     L.geoJSON(earthquakeData, {
         pointToLayer: function(feature, latlng) {
             return L.circleMarker(latlng);
