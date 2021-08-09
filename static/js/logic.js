@@ -28,8 +28,6 @@ var street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Define baseMaps Object to Hold Base Layers
 var baseMaps = {
     "Satellite": satelliteMap,
-    //"Grayscale": grayscaleMap,
-
     "Street" : street,
     "Topographic" :  topo
 };
