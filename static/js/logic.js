@@ -29,7 +29,7 @@ var street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var baseMaps = {
     "Satellite": satelliteMap,
     //"Grayscale": grayscaleMap,
-    //"Outdoors": outdoorsMap,
+
     "Street" : street,
     "Topographic" :  topo
 };
