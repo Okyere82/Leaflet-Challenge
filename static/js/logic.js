@@ -50,7 +50,6 @@ L.control.layers(baseMaps, overlayMaps).addTo(myMap);
 
 // Retrieve earthquakesURL (USGS Earthquakes GeoJSON Data) with D3
 d3.json(earthquakesURL, function(earthquakeData) {
-//d3.json(earthquakesURL).then ((feature)=>{
     // Function to Determine Size of Marker Based on the Magnitude of the Earthquake
     function markerSize(magnitude) {
         if (magnitude === 0) {
