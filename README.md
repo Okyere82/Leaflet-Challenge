@@ -31,5 +31,5 @@ In this step :
 
 STREET MAP
 ![Street](Images/street.png)
-TOPOGRAPHICAL MAP
+TOPOGRAPHIC MAP
 ![Topographic](Images/Topo.png)
