@@ -26,3 +26,4 @@ In this step :
 * And added a number of base maps to choose from as well as separate out  two different data sets into overlays that can be turned on and off independently.
 
 * And added layer controls to our map.
+![Street](Images/street.png)
