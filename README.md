@@ -12,6 +12,7 @@ The USGS provides earthquake data in a number of different formats, updated ever
    * Popups provides additional information about the earthquake when a marker is clicked.
 
    * legends are created that  provides context for map data.
+![Satellite](satellite.png)
 
 
 2.Plotting a second data set on your map  illustrating the relationship between tectonic plates and seismic activity.Pulling  in a second data set 
