@@ -12,6 +12,8 @@ The USGS provides earthquake data in a number of different formats, updated ever
    * Popups provides additional information about the earthquake when a marker is clicked.
 
    * legends are created that  provides context for map data.
+   *
+   SATELLITE MAP
 ![Satellite](Images/satellite.png)
 
 
@@ -26,4 +28,8 @@ In this step :
 * And added a number of base maps to choose from as well as separate out  two different data sets into overlays that can be turned on and off independently.
 
 * And added layer controls to our map.
+
+STREET MAP
 ![Street](Images/street.png)
+TOPOGRAPHICAL MAP
+![Topographic](Images/topo.png)
